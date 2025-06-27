@@ -13,3 +13,9 @@ export class Product {
     this.discontinued=false;
    }
 }
+
+export interface User { 
+    userId: number;
+    userName: string;
+    password: string
+}
