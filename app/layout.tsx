@@ -5,9 +5,10 @@ import "./globals.css";
 import "daisyui";
 
 export default function RootLayout({
-  children,
+  children, teams
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode,
+  teams: React.ReactNode
 }>) {
 
   
@@ -19,8 +20,18 @@ export default function RootLayout({
         className={'antialiased mx-5'}
       >
         <SiteHeader/>
-        <main className="mb-20">
-        {children}
+        <main className="mb-36 flex">
+          
+         
+          <br/>
+          <div className="flex-none h-100 w-40">
+            {teams}
+          </div>
+          <div className="flex-grow">
+          {children}
+          </div>
+           
+
         </main>
         <SiteFooter/>
       </body>

@@ -2,8 +2,13 @@ import jwt from "jsonwebtoken";
 import { NextResponse } from "next/server";
 import { authenticate } from "../../../lib/userDbActions";
 import { serialize } from "cookie";
+  
+import log4js from "@/app/log4js.config"
 
+
+const logger = log4js.getLogger("api");
 export async function POST(req) {
+    logger.debug("Inside POST-auth/login")
     const { userName, password } = await req.json();
 
     let inputUser = { userId: 0, userName: userName, password: password };
